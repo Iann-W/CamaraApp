@@ -9,6 +9,7 @@ data class StudentEntity(
     val id: Long = 0,
     val name: String,
     val matricula: String,
+    val carrera: String = "Desarrollo de Software",
     val photoPath: String,
     val timestamp: Long = System.currentTimeMillis()
 )

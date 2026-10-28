@@ -22,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Badge
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.Class
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material3.Button
@@ -56,6 +57,7 @@ fun AddStudentBottomSheet(
     formState: FormUiState,
     onNameChange: (String) -> Unit,
     onMatriculaChange: (String) -> Unit,
+    onCarreraChange: (String) -> Unit,
     onPhotoCaptured: (Uri, String) -> Unit,
     onSave: () -> Unit,
     onDismiss: () -> Unit,
@@ -142,6 +144,20 @@ fun AddStudentBottomSheet(
                 label = { Text("Matrícula") },
                 leadingIcon = {
                     Icon(imageVector = Icons.Default.Badge, contentDescription = null)
+                },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Campo de texto para la Carrera
+            OutlinedTextField(
+                value = formState.carrera,
+                onValueChange = onCarreraChange,
+                label = { Text("Carrera") },
+                leadingIcon = {
+                    Icon(imageVector = Icons.Default.Class, contentDescription = null)
                 },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth()
